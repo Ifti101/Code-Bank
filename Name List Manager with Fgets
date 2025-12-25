@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+
+    int n;
+
+    printf("Input number of Products: ");
+    scanf("%d",&n);
+    char str[n][100];
+    char in[100];
+
+   int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+
+
+    for(int i=0; i<n; i++){
+        printf("Put name of Product %d: ",i+1);
+        fgets(str[i], sizeof(str[i]), stdin);
+        str[i][strcspn(str[i], "\n")]='\0';
+    }
+
+    printf("\nThe products you mentioned are:\n");
+    for(int i=0; i<n; i++){
+        printf("%d. %s\n",i+1 ,str[i]);
+    }
+
+  while (1) {
+
+    printf("\nPut End to end search, otherwise put name to find which number of product it is\n");
+
+    if (fgets(in, sizeof in, stdin) == NULL) {
+        printf("You didn't input anything!!!\n");
+        break;
+    }
+
+    in[strcspn(in, "\n")] = '\0';
+
+    if (strcmp(in, "End") == 0) {
+        break;
+    }
+
+    int found = 0;
+    for (int i = 0; i < n; i++) {
+        if (strcmp(in, str[i]) == 0) {
+            printf("The product placement number is %d\n", i + 1);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Product not found.\n");
+    }
+}
+
+
+    return 0;
+}
