@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+
+    int x, y;
+    char o, e;
+
+    while(1){
+
+    cout << "Insert First Number: ";
+    cin >> x;
+    cout << "Insert Second Number: ";
+    cin >> y;
+    cout << "What type of math do you want to do: ";
+    cin >> o;
+
+    if(o=='+'){
+        cout << "Result: "<<x+y;
+    }
+    else if(o=='-'){
+        cout << "Result: "<<x-y;
+    }
+    else if(o=='/'){
+        cout << "Result: "<<x/y;
+    }
+    else if(o=='*'){
+        cout << "Result: "<<x*y;
+    }
+
+    cout<<"\nWould you like to stop calculation? Input E if you do. Input anything else if you wish to continue\n";
+
+    cin>>e;
+    if(e=='E'){
+        cout<<"Ending.....";
+        break;
+    }
+
+    cout<<"\nNext Calculation\n\n";
+
+
+}
+
+
+    return 0;
+}
