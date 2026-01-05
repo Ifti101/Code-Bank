@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+
+    string x;
+    char y;
+    int n;
+
+    cout<< "Give String: ";
+    getline(cin,x);
+    cout<< "Last Element: "<< x[x.length()-1];
+    cout<< "\nGive a character to insert: ";
+    cin>>y;
+    cout<< "Where to insert: ";
+    cin>>n;
+    x.at(n-1)=y;
+    cout<< "Changed String: "<<x;
+
+    return 0;
+}
