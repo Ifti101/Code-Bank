@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int N, X, sum=0;
+
+  cin>>N;
+
+  for(int i=0; i<N ; i++){
+
+      cin>>X;
+
+      for(int c=1; c<=X/2; c++){
+          if(X%c==0){
+              sum+=c;
+          }
+      }
+
+
+      if(sum==X){
+          cout<<X<<" eh perfeito\n";
+      }
+      else{
+          cout<<X<<" nao eh perfeito\n";
+      }
+
+      sum=0;
+
+  }
+
+    return 0;
+}
