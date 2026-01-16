@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int N, X, c=0;
+
+  cin>>N;
+
+  for(int i=0; i<N ; i++){
+
+      cin>>X;
+
+      if(X<2){
+          cout<<X<<" nao eh primo\n";
+      }
+      else if(X==2){
+          cout<<X<<" eh primo\n";
+      }
+      else{
+          for(int j=2; j<X; j++){
+
+              if(X%j==0){
+                c++;
+                break;
+              }
+
+          }
+
+          if(c==0){
+              cout<<X<<" eh primo\n";
+          }
+          else{
+              cout<<X<<" nao eh primo\n";
+          }
+          c=0;
+
+      }
+
+
+  }
+
+    return 0;
+}
+
