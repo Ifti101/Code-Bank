@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    int T, c=0;
+    cin>>T;
+
+    int PA, PB;
+    double G1, G2;
+
+    for(int i=0 ; i<T; i++){
+
+        cin>>PA>>PB>>G1>>G2;
+
+
+        while(1){
+
+            c++;
+            if(c>100){
+                cout<<"Mais de 1 seculo.\n";
+                c=0;
+                break;
+            }
+
+            PA+=PA*(G1/100);
+            PB+=PB*(G2/100);
+
+            if(PA>PB){
+                cout<<c<<" anos.\n";
+                c=0;
+                break;
+            }
+
+        }
+
+    }
+
+
+    return 0;
+}
