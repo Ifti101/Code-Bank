@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+
+    int N;
+    cin>>N;
+    vector<int> X(N);
+
+    for(int i=0; i<N; i++){
+        cin>>X[i];
+    }
+
+    int sp=0, sn=X[0];
+
+    for(int i=0; i<N; i++){
+        if(sn>X[i]){
+            sn=X[i];
+            sp=i;
+        }
+    }
+
+    cout<<"Menor valor: "<<sn<<"\n"<<"Posicao: "<<sp<<"\n";
+
+
+    return 0;
+}
